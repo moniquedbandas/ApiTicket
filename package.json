@@ -1,0 +1,21 @@
+{
+  "name": "apiticket",
+  "version": "1.0.0",
+  "description": "API para Gerenciamento de Tickets de Suporte Técnico Descrição Este projeto é uma API desenvolvida em Node.js para gerenciar tickets de suporte técnico. A API permite criar, atualizar, listar e filtrar tickets, bem como fechar e excluir tickets. O foco está no desenvolvimento do back-end, com suporte a operações básicas de CRUD para os tickets.",
+  "main": "src/server.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "node --watch src/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/moniquedbandas/ApiTicket.git"
+  },
+  "author": "Monique Dias Bandas",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/moniquedbandas/ApiTicket/issues"
+  },
+  "homepage": "https://github.com/moniquedbandas/ApiTicket#readme"
+}
