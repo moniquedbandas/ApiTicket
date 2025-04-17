@@ -4,7 +4,7 @@ import { Database } from "../database/database.js";
 const database = new Database();
 export function routeHandler(request, response) {
   const route = routes.find((route) => {
-    return route.method === request.method && route.path === request.url;
+    return route.method === request.method && route.path.test(request.url);
     //utilizamos .find() para procurar dentro do array routes uma rota que corresponda:
     //Ao método HTTP da requisição (route.method === request.method).
     //Ao caminho solicitado (route.path === request.url).
