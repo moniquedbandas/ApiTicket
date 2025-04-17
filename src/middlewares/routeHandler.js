@@ -1,5 +1,6 @@
 import { routes } from "../routes/index.js";
 import { Database } from "../database/database.js";
+import { extractQueryParams } from "../utils/extractQueryParams.js";
 
 const database = new Database();
 export function routeHandler(request, response) {
@@ -11,6 +12,10 @@ export function routeHandler(request, response) {
     //Se encontrar uma rota que corresponde aos critérios, ela será armazenada na variável route.
   });
   if (route) {
+    const routeParams = request.url.match(route.path);
+    const { query } = routeParams.groups;
+    request.query = query ? extractQueryParams(query) : {};
+
     return route.controller({ request, response, database });
     // Caso a rota tenha sido encontrada, o código chama a função controller associada a essa rota, passando os objetos request e response.
   }
